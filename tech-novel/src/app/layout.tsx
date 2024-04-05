@@ -4,7 +4,10 @@ import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import React from "react";
 import { ThemeProvider } from "@mui/material/styles";
-import theme from "./theme/MuiTheme";
+import theme from "../theme/MuiTheme";
+import { Provider } from "react-redux";
+import store from "@/lib/store";
+import StoreProvide from "@/service/StoreProvide";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,9 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <AppRouterCacheProvider options={{ key: "css", enableCssLayer: true }}>
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          <StoreProvide>
+            <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          </StoreProvide>
         </AppRouterCacheProvider>
       </body>
     </html>
