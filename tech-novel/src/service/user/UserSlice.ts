@@ -10,6 +10,13 @@ const initialState: UserTypes.UserList = {
   total: 1,
   total_pages: 1,
   loading: false,
+  singleUserData: {
+    avatar: "",
+    email: "",
+    first_name: "",
+    id: 0,
+    last_name: "",
+  },
 };
 
 const userSlice = createSlice({
@@ -19,8 +26,12 @@ const userSlice = createSlice({
     setUsers: (state, action: PayloadAction<UserTypes.UserList>) => {
       return action.payload;
     },
+    setUserData: (state, action: PayloadAction<UserTypes.User>) => {
+      state.singleUserData = action.payload;
+    },
+    updateUserData: (state, action) => {},
   },
 });
 
-export const { setUsers } = userSlice.actions;
+export const { setUsers, setUserData, updateUserData } = userSlice.actions;
 export default userSlice.reducer;

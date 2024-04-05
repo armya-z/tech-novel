@@ -14,5 +14,6 @@ export namespace UserTypes {
     total_pages?: number;
     data: User[];
     loading?: boolean;
+    singleUserData?: User;
   }
 }

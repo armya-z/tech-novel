@@ -6,4 +6,5 @@ export const colorPallete = {
   black500: "#2D2D2D",
   black600: "#363537",
   black800: "#01150C",
+  textBG: "rgba(148,148,148, 1)",
 };

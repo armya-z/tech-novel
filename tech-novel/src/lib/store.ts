@@ -4,7 +4,7 @@ import UserReducer from "@/service/user/UserSlice";
 
 const store = configureStore({
   reducer: {
-    user: UserReducer, // Add your slice reducer here
+    user: UserReducer,
   },
 });
 export type RootState = ReturnType<typeof store.getState>;
